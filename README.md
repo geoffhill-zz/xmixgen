@@ -25,8 +25,8 @@ xmixgen has the following design goals:
 
     The output should use features consistent with current best practices for
     responsive design without any external dependencies, including semantic
-    HTML5 elements and the `<audio>` tag. Visual design follow the principles
-    of [Material Design](https://google.com/design/spec/material-design/).
+    HTML5 elements and the `<audio>` tag. The visual design is guided by
+    [Material Design](https://google.com/design/spec/material-design/).
 
   * Semantic
 
