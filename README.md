@@ -50,7 +50,7 @@ xmixgen has the following design goals:
 
 ### Examples
 
-See `tests/` for examples.
+See `example.xml`. Run `make` to compile `example.html`.
 
 ### License
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mixtape>
+  <name>Example playlist</name>
+
+  <color for="banner">#3f51b5</color>
+  <color for="artist">#3949ab</color>
+  <color for="title">#1976d2</color>
+  <color for="progress">#04a9f4</color>
+
+  <font face="regular">/somefont.woff2</font>
+  <font face="bold">/somefont-bold.woff2</font>
+
+  <track artist="Erik Satie" title="Gymnopédie No. 1" src="/mp3/satie.mp3" />
+  <track artist="Claude Debussy" title="Clair de Lune" src="/mp3/debussy.mp3" />
+  <track artist="Maurice Ravel" title="Boléro" src="/mp3/ravel.mp3" />
+</mixtape>
