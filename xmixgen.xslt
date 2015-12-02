@@ -81,6 +81,11 @@ h4 { color: ]]><xsl:value-of select="color[@for='title']" /><![CDATA[; }]]>
 		  itemscope="" itemtype="http://schema.org/MusicComposition">
 		<span itemprop="name"><xsl:value-of select="@title" /></span>
 	      </h4>
+	      <audio preload="none">
+		<xsl:attribute name="src">
+		  <xsl:value-of select="@src" />
+		</xsl:attribute>
+	      </audio>
 	    </section>
 	  </xsl:for-each>
 	</main>
