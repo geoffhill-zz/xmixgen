@@ -2,8 +2,13 @@ xmixgen
 =======
 
 xmixgen is a free software (GNU GPLv3+) static HTML mixtape generator. It is
-written as an XSLT stylesheet which compiles an XML mixtape description to a
-single-document HTML site.
+implemented as an XSLT stylesheet. When applied to an XML mixtape description,
+it produces a standalone HTML5 mixtape page.
+
+### Examples
+
+See `example.xml`. Run `make` to compile `example.html` using LibXML's
+`xsltproc` tool.
 
 ### Design
 
@@ -18,14 +23,14 @@ xmixgen has the following design goals:
 
   * Modern
 
-    The output HTML should use features consistent with current best practices
-    for responsive design without any external dependencies, including semantic
+    The output should use features consistent with current best practices for
+    responsive design without any external dependencies, including semantic
     HTML5 elements and the `<audio>` tag. Visual design follow the principles
     of [Material Design](https://google.com/design/spec/material-design/).
 
   * Semantic
 
-    The output HTML should be fully marked with semantic structure according to
+    The output should be fully marked with semantic structure according to
     current best practices, to be equipped for the search engines and music
     aggregators of the future. Currently, this means
     [Microdata](https://en.wikipedia.org/wiki/Microdata_%28HTML%29) with
@@ -33,9 +38,9 @@ xmixgen has the following design goals:
 
   * Private
 
-    The output HTML should be well-suited for domains avoiding crawlers and
-    other privacy-focused individuals. It should not fetch resources from public
-    CDNs and should avoid outbound links that leak the domain via referer [sic].
+    The output should be well-suited for domains avoiding crawlers and other
+    privacy-focused individuals. It should not fetch resources from public CDNs
+    and should avoid outbound links that leak the domain via referer [sic].
 
   * Valid
 
@@ -47,10 +52,6 @@ xmixgen has the following design goals:
     The source code for this tool, or any propagated derivative of it, should
     be available to anyone who needs to tinker with it to suit their needs. To
     protect this right, it should be licensed under the copyleft GNU GPL.
-
-### Examples
-
-See `example.xml`. Run `make` to compile `example.html`.
 
 ### License
 
