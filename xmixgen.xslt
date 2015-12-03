@@ -72,11 +72,13 @@ h4 { color: ]]><xsl:value-of select="color[@for='title']" /><![CDATA[; }]]>
 	  <xsl:for-each select="/mixtape/track">
 	    <section itemprop="track"
 		     itemscope="" itemtype="http://schema.org/MusicRecording">
-	      <h5 itemprop="http://schema.org/byArtist"
-		  itemscope="" itemtype="http://schema.org/MusicGroup">
-		<span itemprop="name"><xsl:value-of select="@artist" /></span>
-	      </h5>
+	      <xsl:if test="@artist">
+		<h5 itemprop="http://schema.org/byArtist"
+		    itemscope="" itemtype="http://schema.org/MusicGroup">
+		  <span itemprop="name"><xsl:value-of select="@artist" /></span>
+		</h5>
 	      <span> &#8212; </span>
+	      </xsl:if>
 	      <h4 itemprop="http://schema.org/recordingOf"
 		  itemscope="" itemtype="http://schema.org/MusicComposition">
 		<span itemprop="name"><xsl:value-of select="@title" /></span>
