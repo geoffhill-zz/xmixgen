@@ -18,8 +18,8 @@ xmixgen has the following design goals:
 
     One invocation of the tool should result in a single self-contained HTML
     document with no dependencies on external JS/CSS, and as few static
-    resource dependencies as possible (just audio files and web fonts), which
-    are all specified by relative or absolute URL in the input.
+    resource dependencies as possible (just audio files), which are all
+    specified by relative or absolute URL in the input.
 
   * Modern
 
@@ -65,3 +65,7 @@ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 See `COPYING` for the full text of the GNU General Public License, version 3.
+
+The Roboto font is included directly as a base64-encoded resource under an
+Apache Software License, version 2.0. See `licenses/LICENSE-2.0.txt` for the
+full text.
