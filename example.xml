@@ -7,8 +7,8 @@
   <color for="title">#1976d2</color>
   <color for="progress">#04a9f4</color>
 
-  <font face="regular">/somefont.woff2</font>
-  <font face="bold">/somefont-bold.woff2</font>
+  <font face="regular">/static/somefont.woff2</font>
+  <font face="bold">/static/somefont-bold.woff2</font>
 
   <!-- First track is an example of no-artist track. -->
   <track title="Introduction" src="/mp3/intro.mp3" />
