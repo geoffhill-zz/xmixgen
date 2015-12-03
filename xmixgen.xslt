@@ -56,7 +56,7 @@ section {
 section + section {margin-top: -18px;}
 @media (max-width: 639px) {
   header { font-size: 28px; height: 56px; line-height: 56px; }
-  main { margin: 36px auto; font-size: 21px; }
+  main { margin: 30px auto; padding: 0 18px; font-size: 21px; }
   section { padding: 12px; }
 }
 h1,h4,h5 { font-size: inherit; display: inline; }
