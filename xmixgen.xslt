@@ -28,6 +28,11 @@ GNU General Public License, version 3.
         <meta name="viewport"
               content="width=device-width,minimum-scale=1.0,initial-scale=1" />
 	<meta itemprop="license" content="https://www.gnu.org/licenses/gpl-3.0.txt" />
+	<link rel="shortcut icon">
+          <xsl:attribute name="content">
+            <xsl:value-of select="favicon" />
+          </xsl:attribute>
+	</link>
         <title itemprop="name"><xsl:value-of select="/mixtape/name" /></title>
         <style>
 @font-face {
@@ -64,8 +69,8 @@ section {
   padding: 18px;
   background-color: #fff;
   box-shadow:
-  0 4px 5px 0 rgba(0, 0, 0, 0.14),
-  0 1px 10px 0 rgba(0, 0, 0, 0.12),
+  0 4px 5px 0 rgba(0, 0, 0, 0.11),
+  0 1px 9px 0 rgba(0, 0, 0, 0.12),
   0 2px 4px -1px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
   overflow: hidden;
@@ -119,11 +124,10 @@ h4 { color: <xsl:value-of select="color[@for='title']" />; }
 	<script type="text/javascript"><![CDATA[
 var tracks = document.getElementsByTagName('section');
 
-var click = function(event) {
-  var section = event.currentTarget;
-  var audio = section.getElementsByTagName('audio')[0];
+var toggle = function(section) {
+  var audio = section.childAudio;
   for (i = 0; i < tracks.length; i++) {
-    var other = tracks[i].getElementsByTagName('audio')[0];
+    var other = tracks[i].childAudio;
     if (other !== audio) {
       other.pause();
       if (other.currentTime !== 0) {
@@ -132,46 +136,64 @@ var click = function(event) {
     }
   }
   if (audio.paused) {
+    if (!section.style.background) {
+      section.style.background = '#f8f8f8';
+    }
     audio.play();
   } else {
     audio.pause();
   }
 }
 
+var drawProgress = function(section) {
+  var audio = section.childAudio;
+  var progress = 100 * (audio.currentTime / audio.duration);
+  section.style.background = 'linear-gradient(to right, ]]><xsl:value-of select="/mixtape/color[@for='progress']" /><![CDATA[ ' + progress + '%, #f8f8f8 ' + progress + '%)';
+}
+
+var click = function(event) {
+  toggle(event.currentTarget);
+}
+
 var dblclick = function(event) {
-  var section = event.currentTarget;
-  var audio = section.getElementsByTagName('audio')[0];
+  var audio = event.currentTarget.childAudio;
   if (!audio.paused) {
     audio.currentTime = 0;
   }
 }
 
-var timer = function(section) {
-  var audio = section.getElementsByTagName('audio')[0];
-  if (audio.paused && (audio.currentTime === 0)) {
-    section.style.background = null;
-  } else if (audio.ended) {
-    section.style.background = null;
-    var next = section.nextSibling;
-    if (next) {
-      next.dispatchEvent(new MouseEvent('click', {
-        'view': window,
-	'bubbles': true,
-	'cancelable': true
-      }));
+var playing = function(event) {
+  var section = event.currentTarget.parentSection;
+  for (i = 0; i < tracks.length; i++) {
+    var track = tracks[i];
+    if (track.intervalId) clearInterval(track.intervalId);
+    if (track !== section) {
+      tracks[i].style.background = null;
     }
-  } else {
-    var progress = 100 * (audio.currentTime / audio.duration);
-    section.style.background = 'linear-gradient(to right, ]]><xsl:value-of select="/mixtape/color[@for='progress']" /><![CDATA[ ' + progress + '%, #f8f8f8 ' + progress + '%)';
   }
-  setTimeout(timer, 150, section);
+  section.intervalId = setInterval(drawProgress, 1000, section);
+}
+
+var ended = function(event) {
+  var section = event.currentTarget.parentSection;
+  clearInterval(section.intervalId);
+  section.style.background = null;
+  var next = section.nextSibling;
+  if (next) {
+    toggle(next);
+  }
 }
 
 window.onload = function() {
   for (i = 0; i < tracks.length; i++) {
-    tracks[i].addEventListener("click", click);
-    tracks[i].addEventListener("dblclick", dblclick);
-    timer(tracks[i]);
+    var track = tracks[i];
+    track.addEventListener("click", click);
+    track.addEventListener("dblclick", dblclick)
+    var audio = track.getElementsByTagName('audio')[0];
+    audio.parentSection = track;
+    track.childAudio = audio;
+    audio.addEventListener("playing", playing);
+    audio.addEventListener("ended", ended);
   }
 }
 ]]></script>
