@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mixtape>
   <name>Example playlist</name>
+  <favicon>favicon.ico</favicon>
 
   <color for="banner">#3f51b5</color>
   <color for="artist">#3949ab</color>
@@ -8,9 +9,9 @@
   <color for="progress">#04a9f4</color>
 
   <!-- First track is an example of no-artist track. -->
-  <track title="Introduction" src="/mp3/intro.mp3" />
-  <track artist="Erik Satie" title="Gymnopédie No. 1" src="/mp3/satie.mp3" />
-  <track artist="Claude Debussy" title="Clair de Lune" src="/mp3/debussy.mp3" />
-  <track artist="Maurice Ravel" title="Boléro" src="/mp3/ravel.mp3" />
+  <track title="Introduction" src="static/intro.mp3" />
+  <track artist="Erik Satie" title="Gymnopédie No. 1" src="static/satie.mp3" />
+  <track artist="Claude Debussy" title="Clair de Lune" src="static/debussy.mp3" />
+  <track artist="Maurice Ravel" title="Boléro" src="static/ravel.mp3" />
 
 </mixtape>
