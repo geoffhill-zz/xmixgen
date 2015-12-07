@@ -40,6 +40,13 @@ GNU General Public License, version 3.
               </xsl:attribute>
 	    </xsl:if>
           </link>
+          <xsl:if test="@sizes='152x152'">
+	    <link rel="apple-touch-icon-precomposed">
+              <xsl:attribute name="href">
+		<xsl:value-of select="@href"/>
+              </xsl:attribute>
+	    </link>
+	  </xsl:if>
 	</xsl:for-each>
         <title itemprop="name">
           <xsl:value-of select="/mixtape/name"/>
