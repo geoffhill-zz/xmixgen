@@ -34,6 +34,11 @@ GNU General Public License, version 3.
             <xsl:attribute name="href">
               <xsl:value-of select="@href"/>
             </xsl:attribute>
+            <xsl:if test="@sizes">
+              <xsl:attribute name="sizes">
+		<xsl:value-of select="@sizes"/>
+              </xsl:attribute>
+	    </xsl:if>
           </link>
 	</xsl:for-each>
         <title itemprop="name">
