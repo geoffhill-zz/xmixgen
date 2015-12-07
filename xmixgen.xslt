@@ -26,11 +26,16 @@ GNU General Public License, version 3.
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1"/>
-        <link rel="icon" type="image/png">
-          <xsl:attribute name="content">
-            <xsl:value-of select="favicon"/>
-          </xsl:attribute>
-        </link>
+        <xsl:for-each select="favicon">
+          <link rel="icon">
+            <xsl:attribute name="type">
+              <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:attribute name="href">
+              <xsl:value-of select="@href"/>
+            </xsl:attribute>
+          </link>
+	</xsl:for-each>
         <title itemprop="name">
           <xsl:value-of select="/mixtape/name"/>
         </title>
