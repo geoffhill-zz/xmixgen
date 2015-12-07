@@ -26,7 +26,7 @@ GNU General Public License, version 3.
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1"/>
-        <link rel="shortcut icon">
+        <link rel="icon" type="image/png">
           <xsl:attribute name="content">
             <xsl:value-of select="favicon"/>
           </xsl:attribute>
