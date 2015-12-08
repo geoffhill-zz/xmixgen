@@ -77,6 +77,8 @@ var ended = function(event) {
   var next = section.nextSibling;
   if (next) {
     toggle(next);
+  } else if (tracks[0]) {
+    toggle(tracks[0]);
   }
 }
 
