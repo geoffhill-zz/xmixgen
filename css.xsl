@@ -18,7 +18,7 @@ GNU General Public License, version 3.
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="roboto-bold.xsl"/>
   <xsl:template name="css">
-    <style type="text/css">
+    <style xmlns="http://www.w3.org/1999/xhtml" type="text/css">
 @font-face {
   font-family: 'xmixgen'; font-style: normal; font-weight: bold;
   src: url('<xsl:call-template name="font"/>') format('woff2');

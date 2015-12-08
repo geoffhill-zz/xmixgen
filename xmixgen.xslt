@@ -18,11 +18,12 @@ GNU General Public License, version 3.
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="css.xsl"/>
   <xsl:import href="js.xsl"/>
-  <xsl:output method="html" doctype-system="about:legacy-compat"/>
+  <xsl:output method="xml" doctype-system="about:legacy-compat" media-type="application/xhtml+xml" indent="yes"/>
   <xsl:template match="/mixtape">
-    <html lang="en" itemscope="" itemtype="http://schema.org/WebSite">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" itemscope="" itemtype="http://schema.org/WebSite">
       <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="utf-8"/>
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1"/>

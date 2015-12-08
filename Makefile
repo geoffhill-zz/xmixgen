@@ -1,6 +1,6 @@
 SRCS = xmixgen.xslt css.xsl roboto-bold.xsl js.xsl
 
-example.html: $(SRCS) example.xml
+example.xhtml: $(SRCS) example.xml
 	xsltproc -o $@ xmixgen.xslt example.xml
 
 .PHONY: lint

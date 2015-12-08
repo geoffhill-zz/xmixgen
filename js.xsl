@@ -17,7 +17,7 @@ GNU General Public License, version 3.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:template name="js">
-    <script type="text/javascript"><![CDATA[
+    <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript"><![CDATA[
 var tracks = document.getElementsByTagName('section');
 
 var toggle = function(section) {
