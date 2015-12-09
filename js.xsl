@@ -19,7 +19,16 @@ GNU General Public License, version 3.
   <xsl:template name="js">
     <script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript"><![CDATA[
 var tracks = document.getElementsByTagName('section');
-
+var audios = document.getElementsByTagName('audio');
+for (i = 0; i < tracks.length; i++) {
+  tracks[i].childAudio = audios[i];
+  if (i+1 < tracks.length) {
+    tracks[i].nextTrack = tracks[i+1];
+  } else {
+    tracks[i].nextTrack = tracks[0];
+  }
+}
+  
 var toggle = function(section) {
   var audio = section.childAudio;
   for (i = 0; i < tracks.length; i++) {
@@ -74,12 +83,7 @@ var ended = function(event) {
   var section = event.currentTarget.parentSection;
   clearInterval(section.intervalId);
   section.style.background = null;
-  var next = section.nextSibling;
-  if (next) {
-    toggle(next);
-  } else if (tracks[0]) {
-    toggle(tracks[0]);
-  }
+  toggle(section.nextTrack);
 }
 
 window.onload = function() {
