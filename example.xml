@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mixtape>
   <name>Example playlist</name>
-  <favicon type="image/png" href="static/favicon.png"/>
-  <favicon type="image/png" href="static/favicon-152.png" sizes="152x152"/>
 
   <color for="banner">#3f51b5</color>
   <color for="artist">#3949ab</color>

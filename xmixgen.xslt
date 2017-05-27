@@ -27,28 +27,10 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1"/>
-        <xsl:for-each select="favicon">
-          <link rel="icon">
-            <xsl:attribute name="type">
-              <xsl:value-of select="@type"/>
-            </xsl:attribute>
-            <xsl:attribute name="href">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:if test="@sizes">
-              <xsl:attribute name="sizes">
-		<xsl:value-of select="@sizes"/>
-              </xsl:attribute>
-	    </xsl:if>
-          </link>
-          <xsl:if test="@sizes='152x152'">
-	    <link rel="apple-touch-icon-precomposed">
-              <xsl:attribute name="href">
-		<xsl:value-of select="@href"/>
-              </xsl:attribute>
-	    </link>
-	  </xsl:if>
-	</xsl:for-each>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128"/>
+        <link rel="icon" type="image/png" href="/favicon-152.png" sizes="152x152"/>
+        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png"/>
         <title itemprop="name">
           <xsl:value-of select="/mixtape/name"/>
         </title>
