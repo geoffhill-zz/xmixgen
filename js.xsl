@@ -77,7 +77,7 @@ var playing = function(event) {
       tracks[i].style.background = null;
     }
   }
-  section.intervalId = setInterval(drawProgress, 1000, section);
+  section.intervalId = setInterval(drawProgress, 500, section);
 }
 
 var ended = function(event) {
