@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2015 Geoff Hill
+Copyright 2015-2016 Geoff Hill
 
-This program is free software: you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
 
-This program is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
-for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
 
-See https://www.gnu.org/licenses/gpl-3.0.txt for the full text of the
-GNU General Public License, version 3.
+You should have received a copy of the GNU Affero General Public License along
+with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="css.xsl"/>
@@ -91,6 +91,7 @@ GNU General Public License, version 3.
             </section>
           </xsl:for-each>
         </main>
+	<footer><p>Powered by <a href="https://bitbucket.org/geoffhill/xmixgen.git">xmixgen</a></p></footer>
         <xsl:call-template name="js"/>
       </body>
     </html>
