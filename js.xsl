@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2015-2016 Geoff Hill
+Copyright 2015-2017 Geoff Hill
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU Affero General Public License as published by the Free
@@ -35,6 +35,7 @@ var toggle = function(section) {
     var other = tracks[i].childAudio;
     if (other !== audio) {
       other.pause();
+      other.src = other.src + "#";
       if (other.currentTime !== 0) {
         other.currentTime = 0;
       }
