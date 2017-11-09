@@ -30,8 +30,7 @@ xmixgen has the following design goals:
 
     The output is well-suited for private or unlinked domains. To avoid leaking
     discoverability to third-parties, it does not fetch resources from public
-    CDNs and avoids unneccesary outbound links that leak the domain via referer
-    [sic].
+    CDNs and uses "no-referrer" policy for the few links it has.
 
   * Modern
 

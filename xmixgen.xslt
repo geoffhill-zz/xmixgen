@@ -24,6 +24,7 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
       <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta charset="utf-8"/>
+        <meta name="referrer" content="no-referrer"/>
         <meta name="mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1"/>
